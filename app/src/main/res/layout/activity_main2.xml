@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#88B7BD"
+    tools:context=".MainActivity2">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="15dp"
+        android:fontFamily="@font/archivo_black"
+        android:padding="8dp"
+        android:text="Weather"
+        android:textColor="#063737"
+        android:textSize="20dp"
+        android:id="@+id/title"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/LLe"
+        android:layout_below="@id/title"
+        android:weightSum="5">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/TILcity"
+            android:layout_margin="10dp"
+            android:layout_weight="4.3"
+            android:hint="Search for a city"
+            android:padding="5dp"
+            app:hintTextColor="#FFFFFF"
+            android:textColorHint="#384F51">
+
+        <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/SearchCity"
+                android:importantForAccessibility="no"
+                android:inputType="text"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textSize="12dp"
+                />
+
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/searchIcon"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:layout_weight="0.5"
+            android:src="@drawable/search_icon"
+            app:tint="#054E57"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/TVCityName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/LLe"
+        android:gravity="center"
+        android:padding="6dp"
+        android:text="City Name"
+        android:textAlignment="center"
+        android:textColor="#033940"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/TVTemp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/TVCityName"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center_horizontal"
+        android:padding="5dp"
+        android:text="10"
+        android:textColor="#0C555E"
+        android:textSize="70dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/IVIcon"
+        android:layout_below="@id/TVTemp"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="5dp"
+        android:src="@mipmap/ic_launcher"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/TVCond"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:text="Condition"
+        android:textColor="#555757"
+        android:layout_below="@id/IVIcon"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_marginBottom="10dp"
+        android:text="Today's Forecast"
+        android:textColor="#0C555E"
+        android:layout_above="@+id/RVWeather"
+        android:textStyle="bold"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/RVWeather"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        />
+
+
+
+</RelativeLayout>
